@@ -12,7 +12,7 @@ function Page({ params: { name } }: Props) {
   return (
     <div className="w-full p-6 grid grid-cols-2 md:grid-cols-3 gap-6">
       <Suspense fallback={<DoctorCardSkeleton repeat={3} />}>
-        <DoctorList query={"doctors?filters[category][Name][$eq]=" + name + "&populate=*"} />
+        <DoctorList query={"?filters[category][Name][$eq]=" + name + "&populate=*"} />
       </Suspense>
     </div>
   )
