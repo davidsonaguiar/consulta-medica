@@ -12,9 +12,13 @@ export async function getCategories() {
   return data.data;
 }
 
-export async function getDoctors(query: string) {
-  const { data } = await instance.get(query);
-  console.log(data.data)
+export async function getDoctors(query: string = "") {
+  const { data } = await instance.get("doctors" + query);
+  return data.data;
+}
+
+export async function getDoctorById(id: string) {
+  const { data } = await instance.get("doctors/" + id + "?populate=*");
   return data.data;
 }
 

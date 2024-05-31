@@ -4,11 +4,12 @@ import Container from "./container"
 import LinkItem from "./link-item"
 import links from "@/datas/links"
 import { ThemeButton } from "./theme-button"
+import AuthArea from "./auth-area"
 
 function Header() {
   return (
     <div className="ml-auto py-4 border-b border-border">
-      <Container className="flex justify-between items-cente gap-6">
+      <Container className="flex justify-between items-center gap-6">
         <div className="w-full flex items-center gap-10">
           <Image
             src="/logo.svg"
@@ -21,9 +22,7 @@ function Header() {
           </ul>
         </div>
         <ThemeButton />
-        <Button>
-          Comece agora
-        </Button>
+        <AuthArea />
       </Container>
     </div>
   )

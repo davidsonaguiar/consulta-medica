@@ -39,7 +39,7 @@ function DoctorCard(props: Props) {
           className="mt-2 border-primary  hover:bg-primary text-xs text-primary dark:text-white hover:text-white "
         >
           <Link
-            href={`/doctor/${id}`}
+            href={`/details/${id}`}
             className="py-2 px-3 w-full"
           >
             Agende agora

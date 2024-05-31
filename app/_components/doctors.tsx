@@ -8,7 +8,7 @@ function Doctors() {
       <h2 className="w-full font-bold text-xl text-center sm:text-left">Especialistas Populares</h2>
       <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7">
         <Suspense fallback={<DoctorCardSkeleton repeat={4}/>}>
-          <DoctorList query="doctors?populate=*"/>
+          <DoctorList query="?populate=*"/>
         </Suspense>
       </div>
     </section>
