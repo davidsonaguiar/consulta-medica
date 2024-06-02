@@ -12,17 +12,17 @@ async function CategoryList() {
         categories.map((category, index) => index < 6 && (
           <Link
             key={category.id}
-            href={"/search/" + category.attributes.Name}
+            href={"/search/" + category.attributes.name}
             className="p-5 bg-primary/15 dark:bg-white/10 rounded-lg text-center flex flex-col justify-center items-center gap-3 hover:scale-110 transition-all ease-in-out cursor-pointer"
           >
             <Image
-              src={category.attributes.Icon.data.attributes.url}
-              alt={category.attributes.Name}
+              src={category.attributes.icon.data.attributes.url}
+              alt={category.attributes.name}
               width={40}
               height={40}
             />
             <p className="text-sm text-primary">
-              {category.attributes.Name}
+              {category.attributes.name}
             </p>
           </Link>
         ))

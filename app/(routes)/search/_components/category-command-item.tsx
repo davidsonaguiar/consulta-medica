@@ -12,14 +12,14 @@ async function CategoryCommandItem() {
       {
         categories?.map(item => (
           <CommandItem className="rounded-md">
-            <Link href={"/search/" + item.attributes.Name} className="w-full p-2 text-primary flex gap-2">
+            <Link href={"/search/" + item.attributes.name} className="w-full p-2 text-primary flex gap-2">
               <Image
-                src={item.attributes.Icon.data.attributes.url}
+                src={item.attributes.icon.data.attributes.url}
                 alt="icon"
                 width={24}
                 height={24}
               />
-              {item.attributes.Name}
+              {item.attributes.name}
             </Link>
           </CommandItem>
         ))

@@ -1,8 +1,8 @@
 export interface Category {
   id: number;
   attributes: {
-    Name: string;
-    Icon: {
+    name: string;
+    icon: {
       data: {
         id: number;
         attributes: {

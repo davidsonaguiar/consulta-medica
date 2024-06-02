@@ -15,14 +15,14 @@ async function Page({ params }: Props) {
   const {
     id,
     attributes: {
-      Name,
-      Avatar,
-      YearExperience,
+      name,
+      avatar,
+      yearExperience,
       category,
-      Phone,
-      Email,
-      About,
-      Patients,
+      phone,
+      email,
+      about,
+      patients,
     }
   }: Doctor = await getDoctorById(params.id);
 
@@ -31,14 +31,14 @@ async function Page({ params }: Props) {
       <h1 className="mb-6 text-3xl font-bold">Detalhes</h1>
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
         <DoctorDetails
-          name={Name}
-          image={Avatar.data.attributes.url}
-          experience={YearExperience}
-          category={category.data.attributes.Name}
-          phone={Phone}
-          email={Email}
-          about={About}
-          patients={Patients}
+          name={name}
+          image={avatar.data.attributes.url}
+          experience={yearExperience}
+          category={category.data.attributes.name}
+          phone={phone}
+          email={email}
+          about={about}
+          patients={patients}
         />
         <DoctorSuggestionList id={id}/>
       </div>

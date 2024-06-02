@@ -1,52 +1,51 @@
-import { getDoctors } from '@/app/_utils/axios'
-import { Doctor } from '@/definitions/doctor'
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
-import Link from 'next/link';
+import { getDoctors } from "@/app/_utils/axios";
+import { Doctor } from "@/definitions/doctor";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import Link from "next/link";
 
 interface Props {
   id: number;
 }
 
 async function DoctorSuggestionList({ id }: Props) {
-  const doctors: Doctor[] = await getDoctors(`?filters[id][$nei]=${id}&pagination[pageSize]=8&populate=*`);
+  const doctors: Doctor[] = await getDoctors(
+    `?filters[id][$nei]=${id}&pagination[pageSize]=8&populate=*`
+  );
 
   const suggestionsDoctors = doctors.map((doctor) => {
-
     const {
       id,
       attributes: {
-        Name,
-        Avatar: {
+        name,
+        avatar: {
           data: {
-            attributes: {
-              url
-            }
-          }
+            attributes: { url },
+          },
         },
-        category
-      }
+        category,
+      },
     } = doctor;
 
-    const nameSplitted = Name.split(' ');
+    const nameSplitted = name.split(" ");
 
     return (
-      <li className='list-none' key={doctor.id} >
-        <Link 
-          href={`/details/${id}`} 
-          
+      <li className="list-none" key={doctor.id}>
+        <Link
+          href={`/details/${id}`}
           className="p-3 hover:bg-secondary rounded-lg shadow flex gap-3 items-center"
         >
           <Avatar>
-            <AvatarImage src={url} alt={Name} className="object-cover"/>
+            <AvatarImage src={url} alt={name} className="object-cover" />
             <AvatarFallback>
-              {nameSplitted[1][0]}{nameSplitted[nameSplitted.length - 1][0]}
+              {nameSplitted[1][0]}
+              {nameSplitted[nameSplitted.length - 1][0]}
             </AvatarFallback>
           </Avatar>
           <div className="leading-6">
-            <h3 className="font-bold line-clamp-1">
-              {Name}
-            </h3>
-            <span className="py-1 px-2 bg-primary/15 rounded-full text-primary text-xs">{category.data.attributes.Name}</span>
+            <h3 className="font-bold line-clamp-1">{name}</h3>
+            <span className="py-1 px-2 bg-primary/15 rounded-full text-primary text-xs">
+              {category.data.attributes.name}
+            </span>
           </div>
         </Link>
       </li>
@@ -60,7 +59,7 @@ async function DoctorSuggestionList({ id }: Props) {
         {suggestionsDoctors}
       </ul>
     </aside>
-  )
+  );
 }
 
-export default DoctorSuggestionList
+export default DoctorSuggestionList;

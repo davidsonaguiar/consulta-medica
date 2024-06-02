@@ -3,17 +3,17 @@ import { Category } from "./category";
 export interface Doctor {
   id: number;
   attributes: {
-    Name: string;
-    About: string;
-    Email: string;
-    Phone: string;
-    StartTime: string;
-    EndTime: string;
-    YearExperience: string;
-    Patients: string;
-    Premium: boolean;
+    name: string;
+    about: string;
+    email: string;
+    phone: string;
+    startTime: string;
+    endTime: string;
+    yearExperience: string;
+    patients: string;
+    premium: boolean;
     category: { data: Category };
-    Avatar: {
+    avatar: {
       data: {
         id: number;
         attributes: {

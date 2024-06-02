@@ -1,9 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button";
-import { LoginLink, LogoutLink, useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import Image from "next/image";
+import { LoginLink, useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 import UserPopover from "./user-popover";
 
 function AuthArea() {
